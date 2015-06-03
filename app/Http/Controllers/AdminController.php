@@ -2,16 +2,16 @@
 
 use Illuminate\Http\Response;
 
-class WelcomeController extends Controller
+class AdminController extends Controller
 {
 
     /*
     |--------------------------------------------------------------------------
-    | Welcome Controller
+    | Home Controller
     |--------------------------------------------------------------------------
     |
-    | This controller renders the view that is available for visitors that
-    | are not logged in.
+    | This controller renders the admin views that are available for
+    | family members with login credentials
     |
     */
 
@@ -20,17 +20,17 @@ class WelcomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
-     * Show the application welcome screen to the user.
+     * Show the application dashboard to the user.
      *
      * @return Response
      */
     public function index()
     {
-        return view('welcome');
+        return view('home');
     }
 
 }
