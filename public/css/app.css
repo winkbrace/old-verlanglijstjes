@@ -6226,8 +6226,16 @@ button.close {
     display: none !important;
   }
 }
+/* lzzl goes wild */
+p,
+div,
+a {
+  color: green;
+}
 body,
 label,
 .checkbox label {
   font-weight: 300;
 }
+
+/*# sourceMappingURL=app.css.map */
