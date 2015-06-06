@@ -20,6 +20,7 @@ class GuestController extends Controller
      */
     public function __construct()
     {
+        // redirects users to admin index when they are logged in
         $this->middleware('guest');
     }
 
@@ -30,7 +31,9 @@ class GuestController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $members = json_decode('[{"name":"Bas"}, {"name": "Lieselot"}]');
+
+        return view('list')->with(compact('members'));
     }
 
     public function test()
