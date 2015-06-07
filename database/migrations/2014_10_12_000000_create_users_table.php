@@ -16,8 +16,11 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name')->unique();
-			$table->string('email');
+			$table->string('email');  // not unique, because most babies don't have an email yet
 			$table->string('password', 60);
+            $table->integer('rank');
+            $table->string('chocolate_preference', 100);
+            $table->integer('order');
 			$table->rememberToken();
 			$table->timestamps();
 		});
