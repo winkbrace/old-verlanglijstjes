@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\User;
+use App\WishList;
 use Illuminate\Http\Response;
 
 class GuestController extends Controller
@@ -31,14 +33,21 @@ class GuestController extends Controller
      */
     public function index()
     {
-        $members = json_decode('[{"name":"Bas"}, {"name": "Lieselot"}]');
+        $members = User::all(['id', 'name', 'rank', 'order'])->sortBy('order');
 
         return view('list')->with(compact('members'));
     }
 
-    public function test()
+    /**
+     * @param string $name username
+     * @return Response
+     */
+    public function wishList($name)
     {
-        return view('test');
+        /** @var WishList[] $items */
+        $items = User::where('name', '=', $name)->firstOrFail()->wishListItems;
+
+        return view('list')->with(compact('items'));
     }
 
 }
