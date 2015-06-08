@@ -35,7 +35,7 @@ class GuestController extends Controller
     {
         $members = User::all(['id', 'name', 'rank', 'order'])->sortBy('order');
 
-        return view('list')->with(compact('members'));
+        return view('home')->with(compact('members'));
     }
 
     /**
