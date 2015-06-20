@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>responsive circles</title>
+
+    <style>
+        .svg-container {
+            display: inline-block;
+            position: relative;
+            width: 30%;
+            padding-bottom: 30%; /* This should match the width. It's a trick to use instead of height. */
+            margin: 1%
+          float:left;
+        }
+
+        .svg-circle {
+            /* svg into : object, img or inline */
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* only required for <img /> */
+        }
+
+        .svg-container p {
+            color: white;
+            font-weight: bold;
+            font-size: 5vw;
+            display: block;
+            position: absolute;
+            top: 8vw;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            margin: 0;
+        }
+
+        /**
+         * Generic layout stuff that is not important for the responsive circles
+         */
+        body {
+            font-family: Helvetica, Arial, Verdana, sans-serif;
+        }
+        .container {
+            width: 75%;
+            margin: 0 auto;
+        }
+        .clear {
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="red"/>
+            </svg>
+            <p>GJ</p>
+        </div>
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="blue"/>
+            </svg>
+            <p>Gerda</p>
+        </div>
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="orange"/>
+            </svg>
+            <p>Bas</p>
+        </div>
+        <br class="clear">
+
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="red"/>
+            </svg>
+            <p>Bob</p>
+        </div>
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="blue"/>
+            </svg>
+            <p>Sepp</p>
+        </div>
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="orange"/>
+            </svg>
+            <p>Lieselot</p>
+        </div>
+        <br class="clear">
+
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="red"/>
+            </svg>
+            <p>Hugo</p>
+        </div>
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="blue"/>
+            </svg>
+            <p>Daan</p>
+        </div>
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="orange"/>
+            </svg>
+            <p>Leanne</p>
+        </div>
+        <br class="clear">
+
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="red"/>
+            </svg>
+            <p>Noortje</p>
+        </div>
+        <div class="svg-container">
+            <svg class="svg-circle" preserveAspectRatio="xMinYMin meet" viewBox="0 0 100 100">
+                <circle cx="50%" cy="50%" r="50%" fill="blue"/>
+            </svg>
+            <p>Michiel</p>
+        </div>
+        <br class="clear">
+
+    </div>
+
+</body>
+</html>
