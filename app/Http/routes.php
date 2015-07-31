@@ -14,7 +14,7 @@
 Route::get('/', 'GuestController@index');
 Route::get('/list/{name}', 'GuestController@wishList');
 
-Route::get('admin', 'AdminController@index');
+Route::get('admin', ['as' => 'admin', 'uses' => 'AdminController@index']);
 
 Route::get('test', 'GuestController@test');
 
