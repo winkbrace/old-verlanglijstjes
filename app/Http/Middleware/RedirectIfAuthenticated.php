@@ -2,7 +2,6 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Http\RedirectResponse;
 
 class RedirectIfAuthenticated {
 
@@ -35,7 +34,7 @@ class RedirectIfAuthenticated {
 	{
 		if ($this->auth->check())
 		{
-			return new RedirectResponse(url('/admin'));
+            return redirect('admin');
 		}
 
 		return $next($request);

@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Response;
 
 class AdminController extends Controller
@@ -7,7 +8,7 @@ class AdminController extends Controller
 
     /*
     |--------------------------------------------------------------------------
-    | Home Controller
+    | Admin Controller
     |--------------------------------------------------------------------------
     |
     | This controller renders the admin views that are available for
@@ -30,7 +31,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $members = User::all(['id', 'name', 'rank', 'order'])->sortBy('order');
+
+        return view('home')->with(compact('members'));
     }
 
 }
