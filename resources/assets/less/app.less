@@ -1,5 +1,7 @@
 @import "bootstrap/bootstrap";
 
+
+
 @btn-font-weight: 300;
 @font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
 
@@ -7,8 +9,17 @@ body, label, .checkbox label {
 	font-weight: 300;
 }
 
-/*header*/
+/* Variables */
+@green: #4CAF50;
+@blue: #2196F3;
+@orange: #FF9800;
+@pink: #E91E63;
+@red: #F44336;
+@dblue: #0D47A1;
+@white: #ffffff;
 
+
+/*header*/
 
 header {
 	display: block;
@@ -58,7 +69,7 @@ nav, section {
 		}
 		
 		a:hover {
-			background: #40bbe8;
+			background: @blue;
 		}
 	}
 		
@@ -68,30 +79,67 @@ nav, section {
 	}
 }
 
-/* home page buttons */
-.btn {
+
+/* buttons */
+.green	{background: @green;}
+.blue	{background: @blue;}
+.orange	{background: @orange}
+.pink   {background: @pink}
+.red	{	
+	background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
+	background: @red;
+}
+.dblue {background: @dblue;}
+
+
+.btn, button {
 	display: block;
 	float: left;
 	border: none;
-	
-	.btn-round {
-		display:block;
-		width:80px;
-		height:80px;
-		line-height:80px;
-		border-radius: 50%;
-		color:#ffffff;
-		text-align:center;
-		text-decoration:none;    
-		font-weight:bold;
-		box-shadow: 2px 2px 6px #CCCCCC;
-	}
+    
+    :hover {
+        background:@dblue;
+        text-decoration:none;  
+        color:@white;        
+    }
+    
+    &:hover {
+        cursor: pointer;
+    }
 }
 
-.btn-round:hover {
-	background:#057aa6;
-	color:#ffffff;
+button:hover {
+    color: @dblue;
 }
+
+.btn-round {
+    display:block;
+    width:80px;
+    height:80px;
+    line-height:80px;
+    border-radius: 50%;
+    color:@white;
+    text-align:center;
+    text-decoration:none;    
+    font-weight:bold;
+    box-shadow: 2px 2px 6px #CCCCCC;
+    text-shadow:0 1px 0 darken(@blue,30%);   
+}
+
+btn-floating {
+
+}
+
+waves-effect {
+
+}
+
+waves-light {
+
+}
+
+
+
 
 /*gifts */
 
@@ -114,22 +162,15 @@ nav, section {
 }
 
 footer {
+    display: block;
+    float: left;
+    width: 100%;
+    
 	.nav a {
 		font-size: 16px;
 	}
 }
 
 
-
-
-/* colors */
-.green	{background: #01c568;}
-.blue	{background: #40bbe8;}
-.yellow	{background: #ffc533;}
-.red	{	
-	background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
-	background: #ff6633;
-}
-.darkblue {background: #057aa6;}
 
 

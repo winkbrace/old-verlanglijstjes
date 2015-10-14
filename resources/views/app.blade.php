@@ -39,10 +39,8 @@
 	</section>
 	
 	<footer>
-		<ul class="nav">
-			<li><a href="{{ url('/') }}"><i class="fa fa-gift"></i> Home</a></li>
-			<li><a href="#"><i class="fa fa-plus"></i> kado toevoegen</a></li>
-		</ul>
+	   <!--Bas if homepage do not show else show--> <a href="{{ url('/') }}"><i class="fa fa-gift"></i>Home</a> 	  
+       <a class="btn-floating btn-round waves-effect waves-light pink"><i class="material-icons">kado toevoegen</i></a>  		
 	</footer>
 
 	<!-- Scripts -->

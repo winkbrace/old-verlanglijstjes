@@ -6231,6 +6231,7 @@ label,
 .checkbox label {
   font-weight: 300;
 }
+/* Variables */
 /*header*/
 header {
   display: block;
@@ -6273,19 +6274,52 @@ section {
   font-size: 50px;
 }
 .head-nav .btn a:hover {
-  background: #40bbe8;
+  background: #2196f3;
 }
 .head-nav .btn-center {
   margin: 0 auto;
   width: 100%;
 }
-/* home page buttons */
-.btn {
+/* buttons */
+.green {
+  background: #4caf50;
+}
+.blue {
+  background: #2196f3;
+}
+.orange {
+  background: #ff9800;
+}
+.pink {
+  background: #e91e63;
+}
+.red {
+  background: radial-gradient(5px -9px, circle, white 8%, red 26px);
+  background: #f44336;
+}
+.dblue {
+  background: #0d47a1;
+}
+.btn,
+button {
   display: block;
   float: left;
   border: none;
 }
-.btn .btn-round {
+.btn :hover,
+button :hover {
+  background: #0d47a1;
+  text-decoration: none;
+  color: #ffffff;
+}
+.btn:hover,
+button:hover {
+  cursor: pointer;
+}
+button:hover {
+  color: #0d47a1;
+}
+.btn-round {
   display: block;
   width: 80px;
   height: 80px;
@@ -6296,10 +6330,7 @@ section {
   text-decoration: none;
   font-weight: bold;
   box-shadow: 2px 2px 6px #CCCCCC;
-}
-.btn-round:hover {
-  background: #057aa6;
-  color: #ffffff;
+  text-shadow: 0 1px 0 #064475;
 }
 /*gifts */
 .gifts {
@@ -6318,25 +6349,13 @@ section {
   /* padding-top from .gift */
   color: #ffc533;
 }
+footer {
+  display: block;
+  float: left;
+  width: 100%;
+}
 footer .nav a {
   font-size: 16px;
-}
-/* colors */
-.green {
-  background: #01c568;
-}
-.blue {
-  background: #40bbe8;
-}
-.yellow {
-  background: #ffc533;
-}
-.red {
-  background: radial-gradient(5px -9px, circle, white 8%, red 26px);
-  background: #ff6633;
-}
-.darkblue {
-  background: #057aa6;
 }
 
 /*# sourceMappingURL=app.css.map */
