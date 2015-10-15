@@ -6226,20 +6226,59 @@ button.close {
     display: none !important;
   }
 }
+/* Variables */
 body,
 label,
 .checkbox label {
   font-weight: 300;
 }
-/* Variables */
-/*header*/
+/* basic layout */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#container {
+  min-height: 100%;
+  position: relative;
+  min-width: 440px;
+}
 header {
-  display: block;
+  background: #1976d2;
+  padding: 10px;
+  height: 140px;
+  /*display: block;
+	float:left;
+	width: 100%;*/
+}
+header .head-nav {
   float: left;
   width: 100%;
-  height: 140px;
-  background: #057aa6;
 }
+header .head-nav li {
+  margin: 0 auto;
+  width: 160px;
+  /* 140 + 2*10 header padding */
+  float: none;
+}
+.content {
+  padding: 10px;
+  padding-bottom: 112px;
+  /* Height of the footer */
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 112px;
+  /* Height of the footer */
+  background: #1976d2;
+}
+footer .nav a {
+  font-size: 16px;
+}
+/*header*/
 header a.awsome {
   font-size: 120px;
   color: #ffffff;
@@ -6248,7 +6287,8 @@ header a.awsome {
   left: 30px;
 }
 header h1 {
-  margin-left: 30px;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 header h1 {
   color: #ffffff;
@@ -6260,55 +6300,47 @@ section {
   float: left;
   width: 100%;
 }
-.head-nav {
-  padding: 0px;
-}
-.head-nav .btn {
-  margin: -40px auto 0 auto;
-  width: 80px;
-  display: block;
-  float: none;
-  padding: 0px;
-}
-.head-nav .btn a {
-  font-size: 50px;
-}
-.head-nav .btn a:hover {
-  background: #2196f3;
-}
-.head-nav .btn-center {
-  margin: 0 auto;
-  width: 100%;
-}
 /* buttons */
-.green {
+.green,
+.color-gj,
+.color-hugo,
+.color-michiel {
   background: #4caf50;
 }
-.blue {
+.blue,
+.color-gerda,
+.color-bas {
   background: #2196f3;
 }
-.orange {
+.orange,
+.color-daan,
+.color-noortje {
   background: #ff9800;
 }
-.pink {
+.pink,
+.color-leanne,
+.color-sepp {
   background: #e91e63;
 }
-.red {
+.red,
+.color-lieselot,
+.color-bob {
   background: radial-gradient(5px -9px, circle, white 8%, red 26px);
   background: #f44336;
 }
 .dblue {
-  background: #0d47a1;
+  background: #1976d2;
 }
 .btn,
 button {
   display: block;
   float: left;
   border: none;
+  font-size: 16px;
 }
 .btn :hover,
 button :hover {
-  background: #0d47a1;
+  background: #1976d2;
   text-decoration: none;
   color: #ffffff;
 }
@@ -6317,13 +6349,13 @@ button:hover {
   cursor: pointer;
 }
 button:hover {
-  color: #0d47a1;
+  color: #1976d2;
 }
-.btn-round {
+.btn-main {
   display: block;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
+  width: 100px;
+  height: 100px;
+  line-height: 90px;
   border-radius: 50%;
   color: #ffffff;
   text-align: center;
@@ -6332,11 +6364,51 @@ button:hover {
   box-shadow: 2px 2px 6px #CCCCCC;
   text-shadow: 0 1px 0 #064475;
 }
+.btn-add {
+  position: absolute;
+  bottom: 56px;
+  right: 56px;
+}
+.btn-add .fa {
+  font-size: 40px;
+}
+.btn-add span {
+  position: absolute;
+  bottom: 18px;
+  left: 24px;
+  color: #ffffff;
+}
+.btn-home {
+  position: absolute;
+  bottom: 56px;
+  left: 56px;
+}
+.btn-home .fa {
+  font-size: 40px;
+}
+.btn-home span {
+  position: absolute;
+  bottom: 18px;
+  left: 31px;
+  color: #ffffff;
+}
+.btn-login {
+  position: relative;
+}
+.btn-login .fa {
+  font-size: 40px;
+}
+.btn-login span {
+  position: absolute;
+  bottom: 28px;
+  left: 33px;
+  color: #ffffff;
+}
 /*gifts */
 .gifts {
   color: #057aa6;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 16px;
 }
 .gifts li {
   padding: 28px 80px;
@@ -6349,13 +6421,19 @@ button:hover {
   /* padding-top from .gift */
   color: #ffc533;
 }
-footer {
-  display: block;
-  float: left;
-  width: 100%;
-}
-footer .nav a {
-  font-size: 16px;
+/* --------------------------------------------------------- Desktop bigger than 800 */
+@media screen and (min-width: 800px) {
+  .content {
+    margin: 0 auto;
+    float: none;
+    width: 800px;
+  }
+  .content .btn-main {
+    width: 160px;
+    height: 160px;
+    line-height: 160px;
+    font-size: 24px;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,6 +1,14 @@
 @import "bootstrap/bootstrap";
 
 
+/* Variables */
+@green: #4CAF50;
+@blue: #2196F3;
+@orange: #FF9800;
+@pink: #E91E63;
+@red: #F44336;
+@dblue: #1976D2;
+@white: #ffffff;
 
 @btn-font-weight: 300;
 @font-family-sans-serif: "Roboto", Helvetica, Arial, sans-serif;
@@ -9,24 +17,61 @@ body, label, .checkbox label {
 	font-weight: 300;
 }
 
-/* Variables */
-@green: #4CAF50;
-@blue: #2196F3;
-@orange: #FF9800;
-@pink: #E91E63;
-@red: #F44336;
-@dblue: #0D47A1;
-@white: #ffffff;
+/* basic layout */
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+   min-width: 440px;
+}
+header {
+   background: @dblue;
+   padding:10px;
+   height: 140px;
+    /*display: block;
+	float:left;
+	width: 100%;*/
+   
+    .head-nav{
+       float: left;
+       width: 100%;
+      // background: green;
+        
+        li {
+            margin: 0 auto;
+            width: 160px; /* 140 + 2*10 header padding */
+            //background: red;
+            float: none;
+        }
+    }
+}
+.content {
+   padding:10px;
+   padding-bottom:112px;   /* Height of the footer */
+}
+footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:112px;   /* Height of the footer */
+   background: @dblue;
+    
+	.nav a {
+		font-size: 16px;
+	}
+}
 
 
 /*header*/
 
 header {
-	display: block;
-	float:left;
-	width: 100%;
-	height: 140px;
-	background: #057aa6;
 	
 	a.awsome {
 		font-size: 120px;
@@ -37,7 +82,8 @@ header {
 	}
 	
 	h1 {
-		margin-left: 30px;	
+		margin-left: 20px;	
+        margin-top: 5px;
 		
 	}
 }
@@ -54,38 +100,15 @@ nav, section {
 	width: 100%;
 }
 
-.head-nav {
-	padding: 0px;
-	
-	.btn {
-		margin: -40px auto 0 auto;
-		width: 80px;
-		display: block;
-		float: none;
-		padding: 0px;
-		
-		a {
-			font-size: 50px;
-		}
-		
-		a:hover {
-			background: @blue;
-		}
-	}
-		
-	.btn-center {
-		margin: 0 auto;
-		width: 100%;
-	}
-}
+
 
 
 /* buttons */
-.green	{background: @green;}
-.blue	{background: @blue;}
-.orange	{background: @orange}
-.pink   {background: @pink}
-.red	{	
+.green, .color-gj, .color-hugo, .color-michiel	{background: @green;}
+.blue, .color-gerda, .color-bas	{background: @blue;}
+.orange, .color-daan, .color-noortje	{background: @orange;}
+.pink, .color-leanne, .color-sepp  {background: @pink;}
+.red, .color-lieselot, .color-bob	{	
 	background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
 	background: @red;
 }
@@ -96,6 +119,7 @@ nav, section {
 	display: block;
 	float: left;
 	border: none;
+    font-size: 16px;
     
     :hover {
         background:@dblue;
@@ -112,11 +136,11 @@ button:hover {
     color: @dblue;
 }
 
-.btn-round {
+.btn-main {
     display:block;
-    width:80px;
-    height:80px;
-    line-height:80px;
+    width:100px;
+    height:100px;
+    line-height:90px;
     border-radius: 50%;
     color:@white;
     text-align:center;
@@ -126,16 +150,41 @@ button:hover {
     text-shadow:0 1px 0 darken(@blue,30%);   
 }
 
-btn-floating {
-
+.btn-add /*floating action button */ {
+    position: absolute;
+    bottom: 56px;
+    right: 56px;
+    .fa{font-size: 40px;}
+    span {
+        position: absolute;
+        bottom: 18px;
+        left: 24px;
+        color: @white;
+    }
 }
 
-waves-effect {
-
+.btn-home /*floating action button */ {
+    position: absolute;
+    bottom: 56px;
+    left: 56px;
+     .fa{font-size: 40px;}
+    span {
+        position: absolute;
+        bottom: 18px;
+        left: 31px;
+        color: @white;
+    }
 }
 
-waves-light {
-
+.btn-login {
+    position: relative;
+    .fa{font-size: 40px;} 
+    span {
+        position: absolute;
+        bottom: 28px;
+        left: 33px;
+        color: @white;
+    }
 }
 
 
@@ -146,7 +195,7 @@ waves-light {
 .gifts {
 	color: #057aa6;
 	font-weight:bold;
-	font-size: 14px;
+	font-size: 16px;
 	
 	li {
 		padding: 28px 80px;
@@ -161,16 +210,32 @@ waves-light {
 	}
 }
 
-footer {
-    display: block;
-    float: left;
-    width: 100%;
+
+
+/* --------------------------------------------------------- Desktop bigger than 800 */
+
+@media screen and (min-width: 800px) {
+    // this css will only be used when the screen size is min 800px
     
-	.nav a {
-		font-size: 16px;
-	}
+    .content {
+        margin: 0 auto; 
+        float: none;
+        width:  800px;
+          
+        
+        .btn-main {
+            width:160px;
+            height:160px;
+            line-height:160px;
+            //border-radius: inherit;
+            font-size: 24px;
+        }
+    }
+    
+    footer {
+    }
+    
+    
 }
-
-
 
 

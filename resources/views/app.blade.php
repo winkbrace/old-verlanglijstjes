@@ -10,37 +10,51 @@
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body id="container">
 	
 	<header>
 		<h1>Verlanglijstjes</h1>
 		<a class="awsome" href="{{ url('/') }}"><i class="fa fa-gift"></i></a>
+        
+        <ul class="head-nav">
+            @if (Auth::guest())
+                <li class="btn btn-login">
+                    <span>Inloggen</span>
+                    <a class="btn-main green" href="{{ url('/auth/login') }}"><i class="fa fa-user"></i></a>
+                </li>
+            @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} 
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+                    </ul>
+                </li>
+            @endif
+        </ul>
+
+        
 	</header>
-	
-	<nav>		
-		<ul class="head-nav">
-			@if (Auth::guest())
-				<li class="btn"><a class="btn-round green btn-center" href="{{ url('/auth/login') }}"><i class="fa fa-sign-in"></i></a><span>Inloggen</span></li>
-			@else
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-					</ul>
-				</li>
-			@endif
-		</ul>
-	</nav>
-	
-	<section>
-	@yield('content')
+    
+	<section class="content">
+        @yield('content')        
 	</section>
 	
 	<footer>
-	   <!--Bas if homepage do not show else show--> <a href="{{ url('/') }}"><i class="fa fa-gift"></i>Home</a> 	  
-       <a class="btn-floating btn-round waves-effect waves-light pink"><i class="material-icons">kado toevoegen</i></a>  		
+	    <!--Bas if homepage do not show-->
+        <div class="btn-home"> <span>Home</span>           
+            <a class="btn btn-main green" href="{{ url('/') }}"><i class="fa fa-home"></i></a>
+             
+        </div>
+        
+        <!--Bas laat deze knop staan eerst wil ik testen wat we hier doen -->
+        <div class="btn-add"><span>Cadeaux</span> 
+            <a class="btn btn-main pink"><i class="fa fa-plus"></i></a>
+            
+        </div>
 	</footer>
 
 	<!-- Scripts -->
