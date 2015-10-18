@@ -77,7 +77,8 @@
 	#       protocol: udp
 	```
    
-7. Je ziet dat homestead ip 192.168.10.10 gebruikt, dus dat ip moet je nu in je hosts bestand gebruiken voor verlanglijstjes.dev   
+7. Je ziet dat homestead ip 192.168.10.10 gebruikt, dus dat ip moet je nu in je hosts bestand gebruiken voor verlanglijstjes.dev
+   `C:\Windows\System32\drivers\etc\hosts`   
    
    ```
    192.168.10.10   verlanglijstjes.dev
@@ -89,7 +90,7 @@
    
 9. Omdat we nu een virtuele machine gebruiken moet je nog een keer de database inlezen. Homestead heeft geen phpmyadmin, dus je moet een database programma installeren.
    - Download en installeer [Toad for Mysql](http://software.dell.com/products/toad-for-mysql/)
-   - Voor dit in voor de connectie
+   - Voer dit in voor de connectie
      ```
 	 Connection type: TCP
 	 Host: 127.0.0.1
