@@ -1,12 +1,12 @@
 @extends('app')
 
 @section('content')
-    <ul class="list-group">
+    <ul class="list-group gifts">
         @foreach ($items as $item)
-            <li class="list-group-item">
+            <li class="list-group-item gift">
                 {{ $item->description }}
                 @if (! empty($item->link))
-                    <a href="{{ $item->link }}" target="_blank">link</a>
+                    <a class="link" href="{{ $item->link }}" target="_blank">link</a>
                 @endif
             </li>
         @endforeach
